@@ -1,0 +1,58 @@
+
+{% extends 'base.html' %}
+
+{% block mycontent %}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+
+        </div>
+        <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+           <form action="http://127.0.0.1:8000/doctors/add/" method="post">
+            <table class="table table-borderless">
+               <h2> <center> Add Doctor</center> </h2>
+                <tr>
+                    <td> Doctor Code </td>
+                    <td> <input name="d_code" class="form-control" type="text" required> </td>
+                </tr>
+                <tr>
+                    <td> Doctor Name  </td>
+                    <td> <input name="name" class="form-control" type="text" required> </td>
+                </tr>
+                <tr>
+                    <td> Address </td>
+                    <td> <input name="address" class="form-control" type="text" required> </td>
+                </tr>
+                <tr>
+                    <td> Specialisation </td>
+                    <td> <input name="specilization" class="form-control" type="text" required> </td>
+                </tr>
+                <tr>
+                    <td> Phone_Number </td>
+                    <td> <input name="phone_no" class="form-control" type="text" required> </td>
+                </tr>
+                <tr>
+                    <td> Email_Id </td>
+                    <td> <input name="mail" class="form-control" type="text" required> </td>
+                </tr>
+                <tr>
+                    <td> UserName </td>
+                    <td> <input name="username" class="form-control" type="text" required> </td>
+                </tr>
+                <tr>
+                    <td> Password </td>
+                    <td> <input name="password" class="form-control" type="text" required> </td>
+                </tr>
+                    <td></td>
+                    <td> <Button type="submit" class="btn btn-success">SUBMIT</Button></td>
+                </tr>
+                </table>
+           </form>
+        </div>
+        <div class="col col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+
+        </div>
+    </div>
+</div>
+{% endblock %}

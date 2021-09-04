@@ -1,0 +1,73 @@
+
+
+{% extends 'base.html' %}
+
+{% block mycontent %}
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+
+        </div>
+        <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+         <form action="http://127.0.0.1:8000/doctors/update/" method="post">
+     
+        <table class="table table-borderless">
+            <tr>
+                <td> Doctor_Code </td>
+                <td> <input name="d_code" type="text" class="form-control"> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>  <center> <Button type="submit" class="btn btn-success"> Search </Button> </center></td>
+            </tr>
+        </table>
+    </form>
+
+     {% if data  %}
+   <form action="http://127.0.0.1:8000/doctors/update_data/" method="post">
+    <table class="table table-borderless">
+        <tr>
+            <td>  </td>
+            <td> <input name="newId" value="{{data.id}}" type="hidden" class="form-control" > </td>
+        </tr>
+         <tr>
+             <td> Doctor_Code </td>
+             <td> <input name="newd_code" value="{{data.d_code}}" type="text" class="form-control" readonly> </td>
+         </tr>
+         <tr>
+             <td> Doctor Name </td>
+             <td> <input name="newname" value=" {{data.name}}" type="text" class="form-control"> </td>
+         </tr>
+         <tr>
+            <td> Address </td>
+            <td> <input name="newaddress"  value=" {{data.address}}" type="text" class="form-control"> </td>
+        </tr>
+        <tr>
+            <td> Specialisation </td>
+            <td> <input name="newspecilization"  value=" {{data.specilization}}" type="text" class="form-control"> </td>
+        </tr>
+        <tr>
+            <td> Phone_Number </td>
+            <td> <input name="newphone_no"  value=" {{data.phone_no}}" type="text" class="form-control"> </td>
+        </tr>
+        <tr>
+            <td> Email_Id </td>
+            <td> <input name="newmail"  value=" {{data.mail}}" type="text" class="form-control"> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <center> <Button type="submit" class="btn btn-primary">  UPDATE</Button> </center> </td>
+        </tr>
+     </table>
+   </form>
+    
+         {% endif  %}
+
+        </div>
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
