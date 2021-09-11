@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block mycontent %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>Welcome  {{request.session.uname}} Edit Profile Here  </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+    
+            </div>
+            <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+                
+                 <form action="http://127.0.0.1:8000/student/update_data/" method="post">
+                    <table class="table table-borderless">
+                        <tr>
+                            <td>  </td>
+                            <td> <input name="newId" value="{{data.id}}" type="hidden" class="form-control" > </td>
+                        </tr>
+                         <tr>
+                             <td> Student Name </td>
+                             <td> <input name="newname"  type="text" class="form-control" value="{{request.session.uname}}" > </td>
+                         </tr>
+                         <tr>
+                            <td> Address </td>
+                            <td> <input name="newaddress"  value=" {{request.session.uaddress}}" type="text" class="form-control" > </td>
+                        </tr>
+                        <tr>
+                            <td> Standard </td>
+                            <td> <input name="newstandard"  value=" {{request.session.ustandard}}" type="text" class="form-control" > </td>
+                        </tr>
+                        <tr>
+                            <td> Phone_Number </td>
+                            <td> <input name="newphone_no"  value="  {{request.session.uphone_no}}" type="text" class="form-control"> </td>
+                        </tr>
+                        <tr>
+                            <td> UserName </td>
+                            <td> <input name="newusername"  value=" {{request.session.uusername}}" type="text" class="form-control" > </td>
+                        </tr>
+                        <tr>
+                            <td> Password </td>
+                            <td> <input name="newpassword"  value=" {{request.session.upassword}}" type="text" class="form-control" > </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td> <center> <Button type="submit" class="btn btn-primary">  UPDATE </Button> </center> </td>
+                        </tr>
+                     </table>
+                   </form>
+            </div>
+            <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+    
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
